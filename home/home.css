@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image:url('/back.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column; 
+    padding-left: 20px;
+    background-color: rgba(255, 255, 255, 0.211); 
+}
+
+.header .title-row {
+    display: flex;
+    align-items: center;
+    gap: 2%; /* Space between logo and title text */
+}
+
+.header .title-row img {
+    width: 12%; /* Adjust as needed */
+    height: auto;
+}
+
+.header .title-row h1 {
+    font-size: 5rem;
+    margin: 0;
+    font-family: "Merienda", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color:#69443c;
+}
+
+.header .title-row h1 sub {
+    font-size: 1.5rem;
+    color: white;
+    font-family: "Edu NSW ACT Hand Pre", cursive;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    color: black;
+    font-size: 1.7rem;
+    padding:5%;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Dekko", cursive;
+    gap:10%;
+}
+ .content button{
+    width: 50%;
+    height: 50px;
+    background-color: #69443c;
+    color: black;
+    border: none;
+    border-radius: 25px/50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family:'Times New Roman', Times, serif;
+    align-self: flex-end;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.427); 
+    opacity: 0.8;
+
+    
+ }
+
+.collage {
+    display: grid;
+    grid-auto-flow: column;                      /* Makes it fill columns first (top to bottom) */
+    grid-auto-columns: 150px;                    /* Width of each column */
+    grid-template-rows: repeat(auto-fit, 175px); /* Number of rows adjusts to fit container height */
+    gap: 10px;
+    height: 100vh;                               /* Adjust height to window height */
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0.5;
+}
+
+.collage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* For different image sizes - manually control spans for better look */
+.collage img:nth-child(1)  { 
+    grid-row: span 2;
+    grid-column: span 1;
+    width: 200px;
+    transform: translate(-23%);
+ }
+.collage img:nth-child(2)  { 
+    grid-column: span 2;
+    transform: translate(-23%);
+    width: 410px;  
+    height: 225px;
+}
+.collage img:nth-child(3)  { 
+    grid-row: span 1;
+    grid-column: span 2;
+
+ }
+.collage img:nth-child(4)  { 
+    grid-row: span 1;
+    grid-column: span 2;
+}
+.collage img:nth-child(5){
+    grid-row: span 1;
+    grid-column: span 1;
+    width: 150px;
+    height:auto;
+}
+.collage img:nth-child(6)  { 
+    grid-column: span 2;
+    grid-row: span 1;
+ }
+.collage img:nth-child(7)  { 
+    grid-column: span 2;
+    grid-row: span 1;
+ }
+.collage img:nth-child(8)  { 
+    grid-column: span 2;
+    grid-row: span 1;
+    height:225px;
+ }
+.collage img:nth-child(9)  {
+     grid-row: span 1;
+     grid-column: span 2; 
+}
+.collage img:nth-child(10) { 
+    grid-row: span 2;
+    grid-column: span 1;
+    height: 410px;
+ }
+.collage img:nth-child(11) { 
+    grid-row: span 1;
+    grid-column: span 2;
+ }
+.collage img:nth-child(12) { 
+    grid-row: span 1;
+    grid-column: span 2;
+    height:225px;
+ }
+.collage img:nth-child(13) { 
+    grid-column: span 2;
+    grid-row: span 1;
+    width:400px;
+}
+.collage img:nth-child(14) { 
+    grid-row: span 2;
+    grid-column: span 1;
+    width:auto;
+    height: 410px;
+ }
+
