@@ -63,3 +63,31 @@ p{
     0% { color: white; }
     100% { color: #ffecf7; }
 }
+
+@media (max-width: 768px) {
+    body {
+        background-size: cover;
+        background-position: center;
+        padding: 10px;
+    }
+
+    .con {
+        width: 95%;
+        padding: 10px;
+    }
+
+    p {
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 img {
+        width: 100%;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
