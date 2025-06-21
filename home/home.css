@@ -224,8 +224,8 @@ body {
         height: 40px;
         font-size: 0.5rem;
     }
-
     .collage {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Even smaller */
+        gap: 5px;
     }
 }
