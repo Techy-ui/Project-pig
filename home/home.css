@@ -215,14 +215,14 @@ body {
         height:auto;
     }
     .content {
-        font-size: 1rem;
+        font-size: 0.8rem;
         padding: 10px;
     }
 
     .content button {
         width: 90%;
         height: 40px;
-        font-size: 0.9rem;
+        font-size: 0.5rem;
     }
 
     .collage {
