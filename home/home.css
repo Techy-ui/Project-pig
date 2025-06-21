@@ -221,12 +221,6 @@ body {
         width: 80%;
         font-size: 1rem;
     }
-
-    .collage {
-        grid-auto-columns: minmax(100px, 1fr);  /* Smaller columns */
-        grid-template-rows: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 8px;
-    }
 }
 
 @media (max-width: 480px) {
