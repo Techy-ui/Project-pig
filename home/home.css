@@ -251,5 +251,6 @@ body {
     grid-template-rows: repeat(auto-fit, 60px); /* Number of rows adjusts to fit container height */
     gap: 5px;
     opacity: 0.5;
-}
+    height:60vh;
+    }
 }
