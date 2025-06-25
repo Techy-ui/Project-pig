@@ -26,9 +26,7 @@
     <p> "Meet the one whose laughter fills every room and whose kindness touches every heart."<br>
     "This is not just a website — it’s a celebration of you."<br>
     "Dive into a journey of memories, laughter, and everything that makes you extraordinary."</p>
-    <button> 
-        Click here to see your profile
-    </button>
+    <button id="profileBtn" class="profile-button">Click here to see your profile</button>
 </div>
 <div class="collage">
     <img src="https://cdn.jsdelivr.net/gh/Techy-ui/Project-pig/home/1.jpg" alt="1">
@@ -47,5 +45,10 @@
     <img src="https://cdn.jsdelivr.net/gh/Techy-ui/Project-pig/home/14.jpeg" alt="14">
 </div>
 
+<script>
+  document.getElementById('profileBtn').addEventListener('click', function() {
+    window.location.href = "/profile/profile.html";
+  });
+</script>
 </body>
 </html>

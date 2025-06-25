@@ -32,7 +32,7 @@ h1 img{
     height:auto;
     padding-bottom: 20px;
     filter: contrast(150%);
-    animation: fadeIn 3s ease-in-out forwards, letterSpacing 6s ease-in-out forwards; /* Removed 'infinite alternate' */
+    animation: fadeIn 3s ease-in-out forwards, letterSpacing 6s ease-in-out forwards; 
 
 }
 
@@ -44,7 +44,7 @@ p{
     text-transform: uppercase;
     text-align: right;
     opacity: 0.8;
-    animation: fadeIn 3s ease-in-out forwards, letterSpacing 6s ease-in-out forwards; /* Removed 'infinite alternate' */
+    animation: fadeIn 3s ease-in-out forwards, letterSpacing 6s ease-in-out forwards; 
 
 }
 

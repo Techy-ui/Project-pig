@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image:url('https://techy-ui.github.io/Project-pig/back.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column; 
+    padding-left: 20px;
+    background-color: rgba(255, 255, 255, 0.211); 
+}
+
+.header .title-row {
+    display: flex;
+    align-items: center;
+
+}
+
+.header .title-row img {
+    width: 5%; /* Adjust as needed */
+    height: auto;
+}
+
+.header .title-row h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-family: "Merienda", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color:#69443c;
+}
+
+.header .title-row h1 sub {
+    font-size: 0.5rem;
+    color: white;
+    font-family: "Edu NSW ACT Hand Pre", cursive;
+}
+
+.header .title-row h5 {
+    font-size: 0.5srem;
+    color: black;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-left: 70%;
+}
+a{
+    text-decoration:none;
+    color:blueviolet;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:0.8rem;
+}
+.container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+.carder {
+    border-radius: 30px;
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    max-width: 1500px;
+    opacity:1;
+    gap:20%;   
+}
+
+.card {
+    background: linear-gradient(to right, #f0e8f8, #e6d4f0);
+    border-radius: 30px;
+    display: flex;
+    padding: 20px;
+    width: 800px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+.left {
+    flex: 8;
+    display: flex;
+    position: relative;
+}
+.icon img{
+    position: absolute;
+    width: 200px;
+    height:auto;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.icon[for="a"] {
+    position: absolute;
+    bottom: 0; /* Stick it to the bottom */
+    top:50%;
+    left:90%;/* Move it to the center */
+    width:20%;
+    height:30%;
+    border: none;
+    border-radius: 70%;
+}
+
+.icon[for="b"] {
+    position: absolute;
+    top:15%;
+    right:90px; /* Move it to the center */
+    width:20%;
+    height:30%;
+    border: none;
+    border-radius: 70%;
+}
+    
+
+
+.right {
+    flex: 2;
+    padding-left: 30px;
+}
+
+
+.name {
+    position: absolute;     /* Default */
+    font-size: 0.8rem;
+    color:black;
+    top:0%;
+    width:1024px;
+    gap:10%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    overflow : hidden;
+    
+}
+.info {
+    font-size: 16px;
+    line-height: 1.7;
+}
+.notification {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+.notification .badge {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background:none;
+  color:red;;
+  font-size: 1.2rem;
+}
+.popup-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color:#5d38ba94;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    opacity: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 9999;
+    font-family: "Merienda", cursive;
+}
+.popup-message.show {
+    opacity: 1;
+}
+/* Blur everything until interaction */
+body.blurred .container,
+body.blurred .header,
+body.blurred a {
+    filter: blur(8px);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Fullscreen overlay */
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#viewBtn {
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    background-color: #69443c;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-family: "Merienda", cursive;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
