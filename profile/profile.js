@@ -1,59 +1,84 @@
 window.addEventListener("DOMContentLoaded", () => {
-    // Add blur initially
-    document.body.classList.add("blurred");
-
-    const viewBtn = document.getElementById("viewBtn");
     const overlay = document.getElementById("overlay");
-    const popup = document.getElementById("popupMessage");
-    const sound = document.getElementById("notifSound");
-    const notificationLink = document.getElementById("notificationLink");
+    const overlayContent = document.getElementById("overlayContent");
+    const viewBtn = document.getElementById("viewBtn");
 
-    let showSecondNotif = true;
+    // Blur initially and show View Profile button
+    document.body.classList.add("blurred");
+    overlay.style.display = "flex";
 
     viewBtn.addEventListener("click", () => {
         // Remove blur and overlay
-        document.body.classList.remove("blurred");
         overlay.style.display = "none";
-
-        // First notification after 5 seconds
-        setTimeout(() => {
-            popup.textContent = "You have an unread notification!";
-            popup.classList.add("show");
-            if (sound) {
-                sound.currentTime = 0;
-                sound.play();
-            }
-
-            // Hide first notification after 4 seconds
-            setTimeout(() => {
-                popup.classList.remove("show");
-
-                // Wait 4 MORE seconds, then show second only if not clicked
-                setTimeout(() => {
-                    if (showSecondNotif) {
-                        popup.textContent = "Please check your notifications!";
-                        popup.classList.add("show");
-                        if (sound) {
-                            sound.currentTime = 0;
-                            sound.play();
-                        }
-
-                        // Hide second after 4s
-                        setTimeout(() => {
-                            popup.classList.remove("show");
-                        }, 4000);
-                    }
-                }, 6000); // Wait after first hides
-
-            }, 4000); // First notification duration
-
-        }, 5000); // Delay after View Profile click
+        document.body.classList.remove("blurred");
     });
-
-    // Cancel second   if user clicks
-    if (notificationLink) {
-        notificationLink.addEventListener("click", () => {
-            showSecondNotif = false;
-        });
-    }
 });
+
+// ✅ Updated popup function with no sound and message in center
+function showMatches() {
+  const overlay = document.getElementById("overlay");
+  const overlayContent = document.getElementById("overlayContent");
+  const sound = document.getElementById("notifSound");
+
+  document.body.classList.add("blurred");
+  overlay.style.display = "flex";
+
+  // Step 1: Show initial "Searching..." message
+  overlayContent.innerHTML = `<div class="popup-messages show">🔍 Searching...</div>`;
+
+  // Optional sound
+  if (sound) {
+    sound.currentTime = 0;
+    sound.play();
+  }
+
+  // Step 2: After 2 seconds, update message
+  setTimeout(() => {
+    overlayContent.innerHTML = `<div class="popup-messages show">🔍 Oops! No one is ready to marry you 😜</div>`;
+  }, 2000);
+
+  // Step 3: Hide popup after total 4 seconds
+  setTimeout(() => {
+    overlay.style.display = "none";
+    document.body.classList.remove("blurred");
+
+    // Restore View Profile button
+    overlayContent.innerHTML = `<button id="viewBtn">👁 View Profile</button>`;
+    overlayContent.querySelector("#viewBtn").addEventListener("click", () => {
+      overlay.style.display = "none";
+      document.body.classList.remove("blurred");
+    });
+  }, 4000);
+}
+
+function viewRequests() {
+  const overlay = document.getElementById("overlay");
+  const overlayContent = document.getElementById("overlayContent");
+  const sound = document.getElementById("notifSound");
+
+  document.body.classList.add("blurred");
+  overlay.style.display = "flex";
+
+  overlayContent.innerHTML = `<div class="popup-messages show">📩 Fetching requests...</div>`;
+
+  if (sound) {
+    sound.currentTime = 0;
+    sound.play();
+  }
+
+  setTimeout(() => {
+    overlayContent.innerHTML = `<div class="popup-messages show">📩 2 Requests Found:<br>1. Michael 😏<br>2. A Pig 🐷</div>`;
+  }, 2000);
+
+  setTimeout(() => {
+    overlay.style.display = "none";
+    document.body.classList.remove("blurred");
+
+    overlayContent.innerHTML = `<button id="viewBtn">👁 View Profile</button>`;
+    overlayContent.querySelector("#viewBtn").addEventListener("click", () => {
+      overlay.style.display = "none";
+      document.body.classList.remove("blurred");
+    });
+  }, 4000);
+}
+

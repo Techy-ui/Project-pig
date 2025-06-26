@@ -11,15 +11,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://techy-ui.github.io/Project-pig//profile/profile.css">
+    <link rel="stylesheet" href="/profile/profile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dekko&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="overlay">
-      <button id="viewBtn">👁 View Profile</button>
+    <div id="overlay" style="display: flex;">
+      <div id="overlayContent">
+        <button id="viewBtn">👁 View Profile</button>
+      </div>
     </div>
+
     <div class="header">
     <div class="title-row">
         <img src="https://techy-ui.github.io/Project-pig/home/logo.png" alt="UnityHearts Logo">
@@ -48,8 +51,8 @@
             <img src="https://techy-ui.github.io/Project-pig//profile/img2.jpg">
           </div>
         </div>
-        <div class="card">
-          <div class="right">
+        <div class="right">
+          <div class="card">
             <div class="info">
               <p><strong>Nickname:</strong> PIGGY</p>
               <p><strong>Gender:</strong> FEMALE (NOT SURE ABOUT THAT)</p>
@@ -61,10 +64,17 @@
               <p><strong>Job:</strong> SLEEPING</p>
               <p><strong>Contact Number:</strong> [HIDDEN]</p>
               <p><strong>Insta ID:</strong> [HIDDEN]</p>
+              <br>
+              <br>
+              <div class="card-cont">
+                <a href="#" onclick="showMatches()">💘 Show Matches&nbsp &nbsp &nbsp &nbsp &nbsp</a>
+                <a href="#" onclick="viewRequests()">📩 View Requests</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      
    </div>
    <audio id="notifSound" src="https://techy-ui.github.io/Project-pig//profile/bell.wav" preload="auto"></audio>
    <div class="popup-message" id="popupMessage">
@@ -73,5 +83,5 @@
     
 
 
-<script src="https://techy-ui.github.io/Project-pig//profile/profile.js"></script>
+<script src="/profile/profile.js"></script>
 </body>
