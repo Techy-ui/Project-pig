@@ -1,18 +1,73 @@
-window.addEventListener("DOMContentLoaded", () => {
-    const overlay = document.getElementById("overlay");
-    const overlayContent = document.getElementById("overlayContent");
-    const viewBtn = document.getElementById("viewBtn");
 
-    // Blur initially and show View Profile button
+window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("blurred");
-    overlay.style.display = "flex";
+
+    const viewBtn = document.getElementById("viewBtn");
+    const overlay = document.getElementById("overlay");
+    const popup = document.getElementById("popupMessage");
+    const sound = document.getElementById("notifSound");
+    const notificationLink = document.getElementById("notificationLink");
+
+    let showSecondNotif = true;
 
     viewBtn.addEventListener("click", () => {
         // Remove blur and overlay
-        overlay.style.display = "none";
         document.body.classList.remove("blurred");
+        overlay.style.display = "none";
+
+        // First notification is scheduled after 5 seconds
+        setTimeout(() => {
+            // Wait until blur is gone
+            waitUntilNotBlurred(() => {
+                showPopup("You have an unread notification!", sound);
+
+                // Hide after 4s
+                setTimeout(() => {
+                    popup.classList.remove("show");
+
+                    // Wait another 6s before second
+                    setTimeout(() => {
+                        // Again, wait until unblurred
+                        if (showSecondNotif) {
+                            waitUntilNotBlurred(() => {
+                                showPopup("Please check your notifications!", sound);
+
+                                // Hide second popup after 4s
+                                setTimeout(() => {
+                                    popup.classList.remove("show");
+                                }, 4000);
+                            });
+                        }
+                    }, 6000);
+                }, 4000);
+            });
+        }, 5000);
     });
+
+    // Helper to show popup with sound
+    function showPopup(message, sound) {
+        const popup = document.getElementById("popupMessage");
+        popup.textContent = message;
+        popup.classList.add("show");
+        if (sound) {
+            sound.currentTime = 0;
+            sound.play();
+        }
+    }
+
+    // Helper to wait until blur is gone
+    function waitUntilNotBlurred(callback) {
+        const check = () => {
+            if (!document.body.classList.contains("blurred")) {
+                callback();
+            } else {
+                setTimeout(check, 200); // Keep checking every 200ms
+            }
+        };
+        check();
+    }
 });
+
 
 // ✅ Updated popup function with no sound and message in center
 function showMatches() {
@@ -25,12 +80,6 @@ function showMatches() {
 
   // Step 1: Show initial "Searching..." message
   overlayContent.innerHTML = `<div class="popup-messages show">🔍 Searching...</div>`;
-
-  // Optional sound
-  if (sound) {
-    sound.currentTime = 0;
-    sound.play();
-  }
 
   // Step 2: After 2 seconds, update message
   setTimeout(() => {
@@ -61,10 +110,6 @@ function viewRequests() {
 
   overlayContent.innerHTML = `<div class="popup-messages show">📩 Fetching requests...</div>`;
 
-  if (sound) {
-    sound.currentTime = 0;
-    sound.play();
-  }
 
   setTimeout(() => {
     overlayContent.innerHTML = `<div class="popup-messages show">📩 2 Requests Found:<br>1. Michael 😏<br>2. A Pig 🐷</div>`;
