@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notifications</title>
+  <link rel="stylesheet" href="/notification/notification.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+</head>
+<body>
+    <div class="header">
+    <div class="title-row">
+        <img src="https://techy-ui.github.io/Project-pig/home/logo.png" alt="UnityHearts Logo">
+        <h1>UnityHearts<sub>A Match Made in Heaven</sub></h1>
+    </div>
+    </div>
+    <a href="https://techy-ui.github.io/Project-pig//home/home.html">Home &gt &gt</a>
+    <a href="https://techy-ui.github.io/Project-pig//profile/profile.html">Profile &gt &gt</a>
+    <a href="/notification/notification.html">Notifications</a>
+    <div class="main-content">
+        <h2>Notifications</h2>
+
+        <div class="tabs">
+            <div class="tab">ALL<br>(4)</div>
+            <div class="tab">INBOX<br>(3)</div>
+            <div class="tab">UNREAD<br>(1)</div>
+            <div class="tab">ARCHIVED<br>(1)</div>
+        </div>
+
+        <div class="notification-area">
+            <div class="sidebar expanded">
+                <div class="notification-box" 
+                    data-topic="Happy Birthday!" 
+                    data-content="🎉 We noticed that today is your birthday! Wishing you a day filled with joy, love, and wonderful surprises. Enjoy something special we’ve prepared for you!" 
+                    data-status="unread">
+                <div class="notif-icon">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/birthday-cake.png" alt="Birthday Icon">
+                </div>
+                <div class="notif-text">
+                    <div class="notif-title">🎉 It’s Your Special Day!</div>
+                    <div class="notif-msg">We noticed today is your birthday — surprise awaits!</div>
+                </div>
+                <div class="notif-time">Just now</div>
+                </div>
+
+                <div class="notification-box" data-topic="Subscription ending" data-content="We have noticed that your annual subscription  will expire soon. Renew now to continue enjoying premium features without interruption" data-status="read">
+                    <div class="notif-icon">
+                        <img src="/notification/alert.png" alt="Icon">
+                    </div>
+                    <div class="notif-text">
+                        <div class="notif-title">Subscription Ending</div>
+                        <div class="notif-msg">Premium features are running out</div>
+                    </div>
+                    <div class="notif-time">2d ago</div>
+                </div>
+                <div class="notification-box" data-topic="Request Found" data-content="There are currently two peoples which seem to be intersted in your profile which i dont know how it happened 😒🫨🤔" data-status="read">
+                <div class="notif-icon">
+                        <img src="/notification/request.png" alt="Icon">
+                    </div>
+                    <div class="notif-text">
+                        <div class="notif-title">Request found</div>
+                        <div class="notif-msg">Interested in your profile</div>
+                    </div>
+                    <div class="notif-time">6mo ago</div></div>
+                <div class="notification-box" data-topic="Profile Update" data-content="Your profile has been successfully updated." data-status="archived">
+                    <div class="notif-icon">
+                        <img src="https://img.icons8.com/ios-filled/50/hammer.png" alt="Icon">
+                    </div>
+                    <div class="notif-text">
+                        <div class="notif-title">Profile Update</div>
+                        <div class="notif-msg">Your profile has been successfully updated.</div>
+                    </div>
+                    <div class="notif-time">1y ago</div>
+                </div>
+
+            </div>
+
+            <div class="details">
+                <div class="topic-card"></div>
+                <div class="content-card">
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="/notification/notification.js"></script>
+</body>
+</html>

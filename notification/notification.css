@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image:url('https://techy-ui.github.io/Project-pig/back.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    .header {
+    display: flex;
+    flex-direction: column; 
+    padding-left: 20px;
+    background-color: rgba(255, 255, 255, 0.211); 
+}
+
+.header .title-row {
+    display: flex;
+    align-items: center;
+
+}
+
+.header .title-row img {
+    width: 5%; /* Adjust as needed */
+    height: auto;
+}
+
+.header .title-row h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-family: "Merienda", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color:#69443c;
+}
+
+.header .title-row h1 sub {
+    font-size: 0.5rem;
+    color: white;
+    font-family: "Edu NSW ACT Hand Pre", cursive;
+}
+
+a{
+    text-decoration:none;
+    color:blueviolet;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:0.8rem;
+}
+    h2 {
+      color: #000;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      color: #333;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .tab:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .notification-area {
+      display: flex;
+      gap: 25px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+/* Sidebar in normal mode */
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.sidebar.expanded {
+  flex: 1 1 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+
+
+/* Details panel: hidden initially */
+.details {
+  flex: 2;
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.topic-card {
+  height: 50px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+}
+
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content-card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 20px;
+  color: #222;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+.notification-box {
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  width: 100%;
+  max-width: 800px;
+  min-height: 70px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.notification-box.expanded {
+  display: flex;
+  flex-direction: row;
+}
+
+.notification-box:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.01);
+}
+
+.notification-box.active {
+  background: rgba(255, 255, 255, 0.35);
+  border: 2px solid #8b5cf6;
+}
+
+.notif-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+/* Text section next to icon */
+.notif-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Title and subtitle spacing */
+.notif-title {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #111;
+}
+
+.notif-msg {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Time aligned to the right */
+.notif-time {
+  font-size: 0.75rem;
+  color: #000000;
+  white-space: nowrap;
+  align-self: flex-start;
+}
+/* Updated visibility logic using classes */
+.details {
+  display:flex;
+  flex-direction: column;
+  gap: 15px;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.details.visible {
+  display: flex;
+}
+
+.topic-card,
+.content-card {
+  display: none;
+}
+
+.topic-card.visible,
+.content-card.visible {
+  display: block;
+}
+
+.notification-box.hidden {
+  display: none !important;
+}
+
+.notification-box[data-status="unread"] {
+  border-left: 5px solid #ff9800;
+  background: rgba(255, 245, 204, 0.3); /* light golden */
+}
